@@ -1,0 +1,16 @@
+version: v2
+name: "oauth2-authz"
+import: "github.com/kjvellajr/oauth2-authz"
+type: "middleware"
+description: "Middleware that performs group-based authorization using the Oauth2 Authorization header."
+displayName: "OAuth2 Authorization Plugin"
+summary: "Rejects requests unless one of the specified groups are present in the Authorization header."
+testData:
+  request:
+    headers:
+      Authorization: "Bearer dummy"
+  config:
+    groupsClaim: custom_groups
+    groups:
+      - "admin"
+      - "devops"
